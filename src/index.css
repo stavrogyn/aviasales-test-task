@@ -42,6 +42,11 @@
   place-items: center;
 }
 
+.app-logo {
+  width: 100px;
+  height: 100px;
+}
+
 .content {
   background-color: var(--gray-background);
   height: 100%;
@@ -123,7 +128,7 @@
 
 .filters-transfers_amout-cell input:not(:checked) + label:after,
 .filters-transfers_amout-cell input:checked + label:after {
-  content: url(checkmark.svg);
+  content: url(./img/checkmark.svg);
   position: absolute;
   top: 8px;
   left: 5px;
