@@ -8,7 +8,7 @@ export default function Sorts () {
                   name="sort"
                   value="sort-cheapest"
                 />
-                <label for="sort-cheapest">САМЫЙ ДЕШЕВЫЙ</label>
+                <label htmlFor="sort-cheapest">САМЫЙ ДЕШЕВЫЙ</label>
               </div>
               <div className="sort sort-fastest">
                 <input
@@ -17,7 +17,7 @@ export default function Sorts () {
                   name="sort"
                   value="sort-fastest"
                 />
-                <label for="sort-fastest">САМЫЙ БЫСТРЫЙ</label>
+                <label htmlFor="sort-fastest">САМЫЙ БЫСТРЫЙ</label>
               </div>
               <div className="sort sort-optimal">
                 <input
@@ -26,7 +26,7 @@ export default function Sorts () {
                   name="sort"
                   value="sort-optimal"
                 />
-                <label for="sort-optimal">ОПТИМАЛЬНЫЙ</label>
+                <label htmlFor="sort-optimal">ОПТИМАЛЬНЫЙ</label>
               </div>
             </div>
     );

@@ -11,7 +11,7 @@ export default function Filters () {
                   id="filter-amout-all"
                   name="filter-amout-all"
                 />
-                <label for="filter-amout-all">Все</label>
+                <label htmlFor="filter-amout-all">Все</label>
               </div>
               <div className="filters-transfers_amout-cell filters-transfers_amout-zero">
                 <input
@@ -19,7 +19,7 @@ export default function Filters () {
                   id="filter-amout-zero"
                   name="filter-amout-zero"
                 />
-                <label for="filter-amout-zero">Без пересадок</label>
+                <label htmlFor="filter-amout-zero">Без пересадок</label>
               </div>
               <div className="filters-transfers_amout-cell filters-transfers_amout-one">
                 <input
@@ -27,7 +27,7 @@ export default function Filters () {
                   id="filter-amout-one"
                   name="filter-amout-one"
                 />
-                <label for="filter-amout-one">1 пересадка</label>
+                <label htmlFor="filter-amout-one">1 пересадка</label>
               </div>
               <div className="filters-transfers_amout-cell filters-transfers_amout-two">
                 <input
@@ -35,7 +35,7 @@ export default function Filters () {
                   id="filter-amout-two"
                   name="filter-amout-two"
                 />
-                <label for="filter-amout-two">2 пересадки</label>
+                <label htmlFor="filter-amout-two">2 пересадки</label>
               </div>
               <div className="filters-transfers_amout-cell filters-transfers_amout-three">
                 <input
@@ -43,7 +43,7 @@ export default function Filters () {
                   id="filter-amout-three"
                   name="filter-amout-three"
                 />
-                <label for="filter-amout-three">3 пересадки</label>
+                <label htmlFor="filter-amout-three">3 пересадки</label>
               </div>
             </div>
           </div>
