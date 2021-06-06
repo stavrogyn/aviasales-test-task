@@ -18,10 +18,4 @@
 
 https://github.com/KosyanMedia/test-tasks/raw/f0f60244b045928746188a86ba4f76ddb5515111/aviasales_frontend/Aviasales%20Test%20Task.fig
 
-Figma
-
-![](search_preview.png?raw=true)
-
-Удачи! Если будут какие-то вопросы, пиши – добавим уточнения в репу.
-
 P.S.: Картинки авиакомпаний можешь брать с нашего CDN: `//pics.avs.io/99/36/{IATA_CODE_HERE}.png`
