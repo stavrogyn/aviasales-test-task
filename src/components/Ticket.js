@@ -1,58 +1,28 @@
 import CarrierLogo from './CarrierLogo'
+import TicketSegment from './TicketSegment'
 
 
-export default function Ticket ({ price, destinationIatas, destinationTimes, duration, transfersAmount, transfersIatas, carrierIata }) {
+export default function Ticket ({ price, carrier, segments }) {
+
+    const ticketSegments = segments.map((segment, i) => <TicketSegment {...segment} key={i} />)
+    const priceToDisplay = price.toString().split('').reverse().map((e, i) => {
+      if (i % 3 === 0 && i !== 0) {
+          e = `${e} `
+      }
+      return e;
+    }).reverse().join('')
 
     return (
         <div className="ticket">
-                <div className="ticket-header">
-                  <div className="ticket-header__price">{price}</div>
-                  <div className="ticket-header__logos">
-                    <div className="ticket-header__logos-logo">
-                        <CarrierLogo carrier={carrierIata} />
-                    </div>
-                  </div>
-                </div>
-                <div className="ticket-info">
-                  <div className="ticket-info__destination">
-                    <div className="ticket-info__destination-iatas">
-                      {destinationIatas}
-                    </div>
-                    <div className="ticket-info__destination-times">
-                      {destinationTimes}
-                    </div>
-                  </div>
-                  <div className="ticket-info__duration">
-                    <div className="ticket-info__duration-title">В пути</div>
-                    <div className="ticket-info__duration-time">{duration}</div>
-                  </div>
-                  <div className="ticket-info__transfers">
-                    <div className="ticket-info__transfers-amount">
-                      {`${transfersAmount} пересадки`}
-                    </div>
-                    <div className="ticket-info__transfers-iatas">{transfersIatas}</div>
-                  </div>
-                </div>
-                <div className="ticket-info">
-                  <div className="ticket-info__destination">
-                    <div className="ticket-info__destination-iatas">
-                        {destinationIatas}
-                    </div>
-                    <div className="ticket-info__destination-times">
-                        {destinationTimes}
-                    </div>
-                  </div>
-                  <div className="ticket-info__duration">
-                    <div className="ticket-info__duration-title">В пути</div>
-                    <div className="ticket-info__duration-time">{duration}</div>
-                  </div>
-                  <div className="ticket-info__transfers">
-                    <div className="ticket-info__transfers-amount">
-                        {`${transfersAmount} пересадки`}
-                    </div>
-                    <div className="ticket-info__transfers-iatas">{transfersIatas}</div>
-                  </div>
-                </div>
+          <div className="ticket-header">
+            <div className="ticket-header__price">{`${priceToDisplay} P`}</div>
+            <div className="ticket-header__logos">
+              <div className="ticket-header__logos-logo">
+                  <CarrierLogo carrier={carrier} />
               </div>
+            </div>
+          </div>
+          {ticketSegments}
+        </div>
     );
 }

@@ -15,9 +15,6 @@ export default class ApiFetcher {
             this.retries --;
             if (this.retries) {
                 return this.startSearch()
-            } 
-            else {
-                throw new Error('Please check your internet connection')
             }
         }
     }
@@ -36,11 +33,11 @@ export default class ApiFetcher {
             return [tickets, stop]
         } catch (error) {
             this.retries --;
+            if (this.retries < 0) {
+                return [[], true]
+            }
             if (this.retries) {
                 return this.sendResultRequest()
-            } 
-            else {
-                throw new Error('Please check your internet connection')
             }
         }
     }

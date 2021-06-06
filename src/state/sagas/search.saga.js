@@ -13,15 +13,16 @@ export function* sagaInitialRequestWatcher () {
 }
   
 function* sagaInitialRequestWorker() {
+    let stop = false, tickets
     const api = yield new ApiFetcher()
     yield call([api, api.getSearchId])
     yield put(processInitialResponse())
-    const [tickets, stop] = yield call([api, api.getTickets])
-    yield call([console, console.log], tickets)
-    const stateObject = yield call(processResultsResponse, tickets)
-    yield call([console, console.log], stateObject)
-    yield put(stateObject)
-    if (!stop) {
-        
-    } 
+
+    while (!stop) {
+        [tickets, stop] = yield call([api, api.getTickets])
+        yield call([console, console.log], tickets)
+        const stateObject = yield call(processResultsResponse, tickets)
+        yield call([console, console.log], stateObject)
+        yield put(stateObject)
+    }
 }
