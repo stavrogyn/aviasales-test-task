@@ -18,7 +18,8 @@ export default function searchReducer (state = initialState, action) {
         case RESULT_RESPONSE_WAS_RECIEVED:
             return ({
                 ...state,
-                allTickets: action.tickets
+                allTickets: [...state.allTickets, ...action.tickets],
+                ticketsToDisplay: [...state.ticketsToDisplay, ...action.tickets]
             })
         case SEARCH_FINISHED:
             return state

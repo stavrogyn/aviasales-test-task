@@ -1,4 +1,4 @@
-import { all, call, fork, put, takeEvery, takeLatest } from "redux-saga/effects";
+import { call, put, takeEvery } from "redux-saga/effects";
 import { 
     INITIAL_REQUEST_DID_SEND, 
     INITIAL_RESPONSE_WAS_RECIEVED, 
@@ -17,22 +17,11 @@ function* sagaInitialRequestWorker() {
     yield call([api, api.getSearchId])
     yield put(processInitialResponse())
     const [tickets, stop] = yield call([api, api.getTickets])
-    yield call([console, console.log(tickets)])
-    yield call([console, console.log(stop)])
-    yield put(processResultsResponse(tickets))
-    // if (!stop) {
+    yield call([console, console.log], tickets)
+    const stateObject = yield call(processResultsResponse, tickets)
+    yield call([console, console.log], stateObject)
+    yield put(stateObject)
+    if (!stop) {
         
-    // } 
+    } 
 }
-
-// export function* sagaResultRequestWatcher () {
-//     yield takeLatest(RESULT_REQUEST_DID_SEND, sagaResultRequestWorker)
-// }
-
-// function* sagaResultRequestWorker() {
-//     const [tickets, stop] = yield call([api, api.getTickets])
-//     yield put(processResultsResponse(tickets))
-//     if (!stop) {
-
-//     } 
-// }
