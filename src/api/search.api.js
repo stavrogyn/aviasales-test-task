@@ -33,11 +33,11 @@ export default class SearchApi {
             return [tickets, stop]
         } catch (error) {
             this.retries --;
-            if (this.retries <= 0) {
-                return [[], true]
-            }
             if (this.retries) {
                 return this.getTickets()
+            } 
+            else {
+                return [[], true]
             }
         }
     }
