@@ -1,9 +1,9 @@
-import Filters from './Filters'
+import Filters from './Filters/Filters'
 import Sorts from './Sorts'
 import Results from './Results'
 
 
-export default function Content () {
+export default function Main () {
     return (
         <div className="content">
           <Filters />

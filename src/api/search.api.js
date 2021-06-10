@@ -1,11 +1,11 @@
-export default class ApiFetcher {
+export default class SearchApi {
     constructor (host = 'https://front-test.beta.aviasales.ru', retries = 5) {
         this.host = host;
         this.initialURL = `${this.host}/search`;
         this.resultURL = `${this.host}/tickets`;
         this.retries = retries;
         this.searchId = ''
-    }
+    } 
 
     getSearchId = async () => {
         try {
@@ -14,7 +14,7 @@ export default class ApiFetcher {
         } catch (error) {
             this.retries --;
             if (this.retries) {
-                return this.startSearch()
+                return this.getSearchId()
             }
         }
     }
@@ -33,11 +33,11 @@ export default class ApiFetcher {
             return [tickets, stop]
         } catch (error) {
             this.retries --;
-            if (this.retries < 0) {
+            if (this.retries <= 0) {
                 return [[], true]
             }
             if (this.retries) {
-                return this.sendResultRequest()
+                return this.getTickets()
             }
         }
     }

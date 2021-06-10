@@ -267,7 +267,7 @@
   margin-bottom: 20px;
 }
 
-.ticket-info {
+.ticket-segment {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: 10px;
@@ -283,18 +283,18 @@
   place-items: center;
 }
 
-.ticket-info__destination-iatas,
-.ticket-info__duration-title,
-.ticket-info__transfers-amount {
+.ticket-segment__destination-iatas,
+.ticket-segment__duration-title,
+.ticket-segment__transfers-amount {
   font-size: 12px;
   line-height: 18px;
   letter-spacing: 0.5px;
   color: var(--text-gray);
 }
 
-.ticket-info__destination-times,
-.ticket-info__duration-time,
-.ticket-info__transfers-iatas {
+.ticket-segment__destination-times,
+.ticket-segment__duration-time,
+.ticket-segment__transfers-iatas {
   font-size: 14px;
   line-height: 21px;
   letter-spacing: 0px;

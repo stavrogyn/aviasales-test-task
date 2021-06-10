@@ -1,4 +1,4 @@
-import Ticket from './Ticket'
+import Ticket from './Ticket/Ticket'
 
 export default function Results () {
     const tickets = [

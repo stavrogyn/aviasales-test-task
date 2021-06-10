@@ -10,28 +10,28 @@ export default function TicketSegment ({ origin, destination, date, stops, durat
     const minutesDuration = duration % 60;
 
     return (
-        <div className="ticket-info">
-            <div className="ticket-info__destination">
-                <div className="ticket-info__destination-iatas">
+        <div className="ticket-segment">
+            <div className="ticket-segment__destination">
+                <div className="ticket-segment__destination-iatas">
                 {`${origin} - ${destination}`}
                 </div>
-                <div className="ticket-info__destination-times">
+                <div className="ticket-segment__destination-times">
                 {`${departureTimeToDisplay} - ${arrivalTimeToDisplay}`}
                 </div>
             </div>
-            <div className="ticket-info__duration">
-                <div className="ticket-info__duration-title">
+            <div className="ticket-segment__duration">
+                <div className="ticket-segment__duration-title">
                     В пути
                 </div>
-                <div className="ticket-info__duration-time">
+                <div className="ticket-segment__duration-time">
                     {`${hoursDuration}ч ${minutesDuration}м`}
                 </div>
             </div>
-            <div className="ticket-info__transfers">
-                <div className="ticket-info__transfers-amount">
+            <div className="ticket-segment__transfers">
+                <div className="ticket-segment__transfers-amount">
                     {`${stops.length} пересадки`}
                 </div>
-                <div className="ticket-info__transfers-iatas">
+                <div className="ticket-segment__transfers-iatas">
                     {stops.join(', ')}
                 </div>
             </div>

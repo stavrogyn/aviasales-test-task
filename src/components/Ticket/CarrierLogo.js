@@ -1,5 +1,5 @@
-import useImage from '../hooks/useImage'
-import CarrierStub from '../img/airplane-stub.svg'
+import useImage from '../../hooks/useImage'
+import CarrierStub from '../../img/airplane-stub.svg'
 
 
 export default function CarrierLogo ({carrier}) {

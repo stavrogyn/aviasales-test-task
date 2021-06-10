@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { sendInitialRequest } from '../state/actions/search.actions'
 import PageHeader from './Header'
-import Content from './Content';
+import Main from './Main';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ export default function App() {
       <div className="app-wrapper">
         <div className="app">
           <PageHeader />
-          <Content />
+          <Main />
         </div>
       </div>
   );

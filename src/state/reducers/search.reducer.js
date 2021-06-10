@@ -7,7 +7,7 @@ import {
 } from '../constants/search.constants'
 import initialState from '../initialState'
 
-export default function searchReducer (state = initialState, action) {
+export default function searchReducer (state = initialState.search, action) {
     switch (action.type) {
         case INITIAL_REQUEST_DID_SEND:
             return state

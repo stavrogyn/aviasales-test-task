@@ -1,9 +1,13 @@
 const initialState = {
     search: {
         allTickets: [],
-        ticketsToDisplay: [],
-        sort: 'cheapest',
-        filter: {}
+        ticketsToDisplay: []
+    },
+    sort: 'cheapest',
+    filters: {
+        transfersAmount: {
+            1: true
+        }
     }
 }
 
