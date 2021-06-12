@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import TransferAmountCell from './TransfersAmountCell'
 import {
     checkAllTransfersAmountFilter,
-    uncheckAllTransfersAmountFilter,
+    uncheckAllTransfersAmountFilter
 } from '../../../state/actions/filter.actions'
 
 export default function TransfersAmount () {

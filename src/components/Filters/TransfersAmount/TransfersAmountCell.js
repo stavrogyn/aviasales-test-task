@@ -5,6 +5,9 @@ import {
     uncheckTransfersAmountFilter,
 } from '../../../state/actions/filter.actions'
 
+/**
+ * @description - expect that 6 transfers is the maximum possible value
+ */
 const transfersAmountsToString = { 
     0: { eng: 'zero', ru: 'Без пересадок' },
     1: { eng: 'one', ru: '1 пересадка' },
