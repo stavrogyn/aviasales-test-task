@@ -7,7 +7,7 @@ import {
 
 export default function TransfersAmount () {
     const transfersState = useSelector(state => state.filters.transfersAmount);
-    const transfersCells = Object.entries(transfersState).map(([number, state]) => <TransferAmountCell transferNumber={number} />)
+    const transfersCells = Object.entries(transfersState).map(([transferNumber, transferState]) => <TransferAmountCell transferNumber={transferNumber} />)
 
     const dispatch = useDispatch();
     const handleChange = e => {
