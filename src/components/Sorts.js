@@ -25,6 +25,7 @@ export default function Sorts () {
               id="sort-fastest"
               name="sort"
               value="sort-fastest"
+              defaultChecked
               onClick={() => dispatch(sortByFastest())}
             />
             <label htmlFor="sort-fastest">САМЫЙ БЫСТРЫЙ</label>

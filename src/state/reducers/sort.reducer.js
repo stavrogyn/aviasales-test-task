@@ -1,7 +1,10 @@
 import {
     CHEAPEST_SORT_WAS_CLICKED,
     FASTEST_SORT_WAS_CLICKED,
-    OPTIMAL_SORT_WAS_CLICKED
+    OPTIMAL_SORT_WAS_CLICKED,
+    CHEAPEST,
+    FASTEST,
+    OPTIMAL
 } from '../constants/sort.constants';
 import initialState from '../initialState'
 
@@ -9,11 +12,11 @@ import initialState from '../initialState'
 export default function sortReducer (state = initialState.sort, action) {
     switch (action.type) {
         case CHEAPEST_SORT_WAS_CLICKED:
-            return 'cheapest'
+            return CHEAPEST
         case FASTEST_SORT_WAS_CLICKED:
-            return 'fastest'
+            return FASTEST
         case OPTIMAL_SORT_WAS_CLICKED:
-            return 'optimal'
+            return OPTIMAL
         default:
             return state;
     }
