@@ -12,11 +12,11 @@ import filterTickets from '../../helpers/filterTickets';
 import sortTickets from '../../helpers/sortTickets';
 
 
-export function* sagaInitialRequestWatcher () {
-    yield takeEvery(INITIAL_REQUEST_DID_SEND, sagaInitialRequestWorker)
+export default function* sagaSearchWatcher () {
+    yield takeEvery(INITIAL_REQUEST_DID_SEND, sagaSearchWorker)
 }
   
-function* sagaInitialRequestWorker() {
+function* sagaSearchWorker() {
     let stopSearchMarker = false, fetchedTickets, ticketsToDisplay;
     const api = yield new SearchApi();
     yield call([api, api.getSearchId]);

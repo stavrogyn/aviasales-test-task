@@ -1,31 +1,48 @@
-import { call, put, takeEvery } from "redux-saga/effects";
+import { put, select, takeEvery, fork } from "redux-saga/effects";
 import { 
-    INITIAL_REQUEST_DID_SEND, 
-    INITIAL_RESPONSE_WAS_RECIEVED, 
-    RESULT_REQUEST_DID_SEND,
-    RESULT_RESPONSE_WAS_RECIEVED
-} from '../constants/search.constants'
-import { processInitialResponse, processResultsResponse } from '../actions/search.actions'
-import SearchApi from '../../api/search.api'
+    CHEAPEST_SORT_WAS_CLICKED,
+    FASTEST_SORT_WAS_CLICKED,
+    OPTIMAL_SORT_WAS_CLICKED,
+    CHEAPEST,
+    FASTEST,
+    OPTIMAL
+} from '../constants/search.constants';
+import { rerenderTickets } from '../actions/search.actions';
+import sortTickets from '../../helpers/sortTickets';
 
-export function* sagaInitialRequestWatcher () {
-    yield takeEvery(INITIAL_REQUEST_DID_SEND, sagaInitialRequestWorker)
+
+export default function* sagaSortWatcher() {
+    yield fork(sagaSortCheapestWatcher);
+    yield fork(sagaSortFastestWatcher);
+    yield fork(sagaSortOptimalWatcher);
+}
+
+function* sagaSortCheapestWatcher () {
+    yield takeEvery(CHEAPEST_SORT_WAS_CLICKED, sagaSortCheapestWorker)
 }
   
-function* sagaInitialRequestWorker() {
-    let stop = false, tickets
-    const api = yield new SearchApi()
-    yield call([api, api.getSearchId])
-    yield put(processInitialResponse())
-    while (!stop) {
-        [tickets, stop] = yield call([api, api.getTickets])
-        yield call([console, console.log], tickets)
-        const stateObject = yield call(processResultsResponse, tickets)
-        yield call([console, console.log], stop)
-        yield put(stateObject)
-    }
+function* sagaSortCheapestWorker() {
+    const currentTicketsInStore = yield select(state => state.search.allTickets);
+    const ticketsToDisplay = sortTickets(currentTicketsInStore, CHEAPEST)
+    yield put(rerenderTickets(ticketsToDisplay));
 }
 
-function* sagaTicketsProcessWorker() {
-    yield call([console, console.log], 'processed')
+function* sagaSortFastestWatcher () {
+    yield takeEvery(FASTEST_SORT_WAS_CLICKED, sagaSortFastestWorker)
+}
+  
+function* sagaSortFastestWorker() {
+    const currentTicketsInStore = yield select(state => state.search.allTickets);
+    const ticketsToDisplay = sortTickets(currentTicketsInStore, FASTEST)
+    yield put(rerenderTickets(ticketsToDisplay));
+}
+
+function* sagaSortOptimalWatcher () {
+    yield takeEvery(OPTIMAL_SORT_WAS_CLICKED, sagaSortOptimalWorker)
+}
+  
+function* sagaSortOptimalWorker() {
+    const currentTicketsInStore = yield select(state => state.search.allTickets);
+    const ticketsToDisplay = sortTickets(currentTicketsInStore, OPTIMAL)
+    yield put(rerenderTickets(ticketsToDisplay));
 }
