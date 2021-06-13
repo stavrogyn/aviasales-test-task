@@ -24,7 +24,7 @@ export default function searchReducer (state = initialState.search, action) {
         case RERENDER_DISPLAYED_TICKETS:
             return ({
                 ...state,
-                ticketsToDisplay: action.tickets
+                ticketsToDisplay: [...action.tickets]
             })
         case SEARCH_FINISHED:
             return state

@@ -6,7 +6,7 @@ import {
     CHEAPEST,
     FASTEST,
     OPTIMAL
-} from '../constants/search.constants';
+} from '../constants/sort.constants';
 import { rerenderTickets } from '../actions/search.actions';
 import sortTickets from '../../helpers/sortTickets';
 
