@@ -8,6 +8,7 @@ import {
     rerenderTickets,
     finishSearch
 } from '../actions/search.actions';
+import { changeTotalAmountOfTransfersAmountFilter } from '../actions/filter.actions'
 import filterTickets from '../../helpers/filterTickets';
 import sortTickets from '../../helpers/sortTickets';
 
@@ -31,6 +32,10 @@ function* sagaSearchWorker() {
         ticketsToDisplay = filterTickets(currentTicketsInStore, currentFilterState)
         ticketsToDisplay = sortTickets(ticketsToDisplay, currentSortState)
         yield put(rerenderTickets(ticketsToDisplay));
+        const totalAmountOfTransfers = currentTicketsInStore
+            .flatMap(t => t.segments.map(s => s.stops.length))
+            .filter((v, i, a) => a.indexOf(v) === i);
+        yield put(changeTotalAmountOfTransfersAmountFilter(totalAmountOfTransfers))
     }
     yield put(finishSearch())
 }

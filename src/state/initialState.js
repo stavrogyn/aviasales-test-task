@@ -91,10 +91,6 @@ const initialState = {
     sort: 'CHEAPEST',
     filters: {
         transfersAmount: {
-            0: true,
-            1: true,
-            2: true,
-            3: true
         }
     }
 }
