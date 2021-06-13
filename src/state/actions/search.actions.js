@@ -4,7 +4,8 @@ import {
     RESULT_REQUEST_DID_SEND,
     RESULT_RESPONSE_WAS_RECIEVED,
     RERENDER_DISPLAYED_TICKETS,
-    SEARCH_FINISHED
+    SEARCH_FINISHED,
+    REFRESH_SEARCH_STATE
 } from '../constants/search.constants.js'
 
 const sendInitialRequest = () => ({ type: INITIAL_REQUEST_DID_SEND });
@@ -13,6 +14,7 @@ const sendResultsRequest = () => ({ type: RESULT_REQUEST_DID_SEND });
 const processResultsResponse = tickets => ({ type: RESULT_RESPONSE_WAS_RECIEVED, tickets });
 const rerenderTickets = tickets => ({ type: RERENDER_DISPLAYED_TICKETS, tickets });
 const finishSearch = () => ({ type: SEARCH_FINISHED })
+const refreshSearchState = () => ({ type: REFRESH_SEARCH_STATE })
 
 export {
     sendInitialRequest,
@@ -20,5 +22,6 @@ export {
     sendResultsRequest,
     processResultsResponse,
     rerenderTickets,
-    finishSearch
+    finishSearch,
+    refreshSearchState
 }

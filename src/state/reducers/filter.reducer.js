@@ -3,7 +3,8 @@ import {
     FILTERS_TRANSFERS_AMOUNT_DID_UNCHECK,
     FILTERS_ALL_TRANSFERS_AMOUNT_DID_CHECK,
     FILTERS_ALL_TRANSFERS_AMOUNT_DID_UNCHECK,
-    FILTERS_TOTAL_TRANSFERS_AMOUNT_WAS_CHANGED
+    FILTERS_TOTAL_TRANSFERS_AMOUNT_WAS_CHANGED,
+    REFRESH_TRANSFERS_AMOUNT_STATE
 } from '../constants/filter.constants';
 import initialState from '../initialState';
 
@@ -42,6 +43,8 @@ export default function filterReducer (state = initialState.filters, action) {
                     ...state.transfersAmount
                 }
             })
+        case REFRESH_TRANSFERS_AMOUNT_STATE:
+            return initialState.filters
         default:
             return state;
     }

@@ -1,3 +1,7 @@
+# Проект можно посмотреть по адресу ниже:
+
+https://aviasales-test-exercise.herokuapp.com
+
 # Тестовое задание Aviasales ([frontend](https://aviasales.recruitee.com/o/frontend-developer-js-coffeescript-react%C2%A0redux--aviasalesru))
 
 Основной frontend проект нашей команды — это страница выдачи билетов со множеством фильтров, настроек и, собственно, билетов.

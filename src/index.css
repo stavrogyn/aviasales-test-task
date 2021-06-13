@@ -246,6 +246,21 @@
   display: none;
 }
 
+.results-stub {
+  background-color: var(--card-white);
+  width: 100%;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--ticket-shadow-box);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .ticket {
   background-color: var(--card-white);
   width: 100%;

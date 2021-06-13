@@ -1,6 +1,6 @@
 import Filters from './Filters/Filters'
 import Sorts from './Sorts'
-import Results from './Results'
+import Results from './Results/Results'
 
 
 export default function Main () {

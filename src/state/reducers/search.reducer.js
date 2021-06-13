@@ -4,7 +4,8 @@ import {
     RESULT_REQUEST_DID_SEND,
     RESULT_RESPONSE_WAS_RECIEVED,
     RERENDER_DISPLAYED_TICKETS,
-    SEARCH_FINISHED
+    SEARCH_FINISHED,
+    REFRESH_SEARCH_STATE
 } from '../constants/search.constants'
 import initialState from '../initialState'
 
@@ -28,6 +29,8 @@ export default function searchReducer (state = initialState.search, action) {
             })
         case SEARCH_FINISHED:
             return state
+        case REFRESH_SEARCH_STATE:
+            return initialState.search
         default:
             return state;
     }
