@@ -2,7 +2,7 @@
 * @description Expect that "6 transfers" is the maximum possible value
 */
 export default function transfersAmountsToString (transferNumber) {
-    const transfersAmountsToString = { 
+    const transfersAmountsToStringDict = { 
         0: { eng: 'zero', ru: 'Без пересадок' },
         1: { eng: 'one', ru: '1 пересадка' },
         2: { eng: 'two', ru: '2 пересадки' },
@@ -11,5 +11,5 @@ export default function transfersAmountsToString (transferNumber) {
         5: { eng: 'five', ru: '5 пересадок' },
         6: { eng: 'six', ru: '6 пересадок'}
     }
-    return transfersAmountsToString[transferNumber]
+    return transfersAmountsToStringDict[transferNumber]
 }
