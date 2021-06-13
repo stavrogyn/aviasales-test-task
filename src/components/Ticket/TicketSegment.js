@@ -1,3 +1,5 @@
+import transfersAmountsToString from '../../helpers/getTransferName'
+
 export default function TicketSegment ({ origin, destination, date, stops, duration }) {
 
     const getHoursAndMinutesString = date => (date.toTimeString()).slice(0, 5)
@@ -8,6 +10,7 @@ export default function TicketSegment ({ origin, destination, date, stops, durat
     const arrivalTimeToDisplay = getHoursAndMinutesString(arrivalTime);
     const hoursDuration = parseInt(duration / 60);
     const minutesDuration = duration % 60;
+    const { ru: transfersAmountString } = transfersAmountsToString(stops.length)
 
     return (
         <div className="ticket-segment">
@@ -29,7 +32,7 @@ export default function TicketSegment ({ origin, destination, date, stops, durat
             </div>
             <div className="ticket-segment__transfers">
                 <div className="ticket-segment__transfers-amount">
-                    {`${stops.length} пересадки`}
+                    {transfersAmountString}
                 </div>
                 <div className="ticket-segment__transfers-iatas">
                     {stops.join(', ')}

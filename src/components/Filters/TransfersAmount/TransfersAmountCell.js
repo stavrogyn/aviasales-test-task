@@ -4,19 +4,7 @@ import {
     checkTransfersAmountFilter,
     uncheckTransfersAmountFilter,
 } from '../../../state/actions/filter.actions'
-
-/**
- * @description - expect that 6 transfers is the maximum possible value
- */
-const transfersAmountsToString = { 
-    0: { eng: 'zero', ru: 'Без пересадок' },
-    1: { eng: 'one', ru: '1 пересадка' },
-    2: { eng: 'two', ru: '2 пересадки' },
-    3: { eng: 'three', ru: '3 пересадки' },
-    4: { eng: 'four', ru: '4 пересадки' },
-    5: { eng: 'five', ru: '5 пересадок' },
-    6: { eng: 'six', ru: '6 пересадок'}
-}
+import transfersAmountsToString from '../../../helpers/getTransferName'
 
 export default function TransferAmountCell ({ transferNumber }) {
     const inputEl = useRef(null);
@@ -35,8 +23,7 @@ export default function TransferAmountCell ({ transferNumber }) {
         inputEl.current.checked = transferCheckedState
     }, [transferCheckedState])
 
-    const transferNameInCssClass = transfersAmountsToString[transferNumber].eng
-    const transferNameInHtmlLabel = transfersAmountsToString[transferNumber].ru
+    const { eng: transferNameInCssClass, ru: transferNameInHtmlLabel } = transfersAmountsToString(transferNumber)
 
     return (
         <div className={`filters-transfers_amout-cell filters-transfers_amout-${transferNameInCssClass}`}>
