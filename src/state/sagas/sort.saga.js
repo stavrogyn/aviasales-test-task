@@ -22,8 +22,8 @@ function* sagaSortCheapestWatcher () {
 }
   
 function* sagaSortCheapestWorker() {
-    const currentTicketsInStore = yield select(state => state.search.allTickets);
-    const ticketsToDisplay = sortTickets(currentTicketsInStore, CHEAPEST)
+    const currentDisplayedTickets = yield select(state => state.search.ticketsToDisplay);
+    const ticketsToDisplay = sortTickets(currentDisplayedTickets, CHEAPEST)
     yield put(rerenderTickets(ticketsToDisplay));
 }
 
@@ -32,8 +32,8 @@ function* sagaSortFastestWatcher () {
 }
   
 function* sagaSortFastestWorker() {
-    const currentTicketsInStore = yield select(state => state.search.allTickets);
-    const ticketsToDisplay = sortTickets(currentTicketsInStore, FASTEST)
+    const currentDisplayedTickets = yield select(state => state.search.ticketsToDisplay);
+    const ticketsToDisplay = sortTickets(currentDisplayedTickets, FASTEST)
     yield put(rerenderTickets(ticketsToDisplay));
 }
 
@@ -42,7 +42,7 @@ function* sagaSortOptimalWatcher () {
 }
   
 function* sagaSortOptimalWorker() {
-    const currentTicketsInStore = yield select(state => state.search.allTickets);
-    const ticketsToDisplay = sortTickets(currentTicketsInStore, OPTIMAL)
+    const currentDisplayedTickets = yield select(state => state.search.ticketsToDisplay);
+    const ticketsToDisplay = sortTickets(currentDisplayedTickets, OPTIMAL)
     yield put(rerenderTickets(ticketsToDisplay));
 }

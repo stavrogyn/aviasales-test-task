@@ -15,6 +15,7 @@ export default function Sorts () {
               id="sort-cheapest"
               name="sort"
               value="sort-cheapest"
+              defaultChecked
               onClick={() => dispatch(sortByCheapest())}
             />
             <label htmlFor="sort-cheapest">САМЫЙ ДЕШЕВЫЙ</label>
@@ -25,7 +26,6 @@ export default function Sorts () {
               id="sort-fastest"
               name="sort"
               value="sort-fastest"
-              defaultChecked
               onClick={() => dispatch(sortByFastest())}
             />
             <label htmlFor="sort-fastest">САМЫЙ БЫСТРЫЙ</label>

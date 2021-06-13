@@ -88,7 +88,7 @@ const initialState = {
         allTickets: [...tickets],
         ticketsToDisplay: [...tickets]
     },
-    sort: 'FASTEST',
+    sort: 'CHEAPEST',
     filters: {
         transfersAmount: {
             0: true,
