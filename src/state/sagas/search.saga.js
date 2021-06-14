@@ -32,9 +32,9 @@ function* sagaSearchWorker() {
         ticketsToDisplay = filterTickets(currentTicketsInStore, currentFilterState)
         ticketsToDisplay = sortTickets(ticketsToDisplay, currentSortState)
         yield put(rerenderTickets(ticketsToDisplay));
-        const totalAmountOfTransfers = currentTicketsInStore
-            .flatMap(t => t.segments.map(s => s.stops.length))
-            .filter((v, i, a) => a.indexOf(v) === i);
+        const totalAmountOfTransfers = [...new Set(
+            currentTicketsInStore.flatMap(t => t.segments.map(s => s.stops.length))
+        )]
         yield put(changeTotalAmountOfTransfersAmountFilter(totalAmountOfTransfers))
     }
     yield put(finishSearch())
