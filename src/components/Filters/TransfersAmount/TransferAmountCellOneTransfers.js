@@ -6,7 +6,7 @@ import {
 } from '../../../state/actions/filter.actions'
 import transfersAmountsToString from '../../../helpers/getTransferName'
 
-export default function TransferAmountCell ({ transferNumber }) {
+export default function TransferAmountCellOneTransfers ({ transferNumber }) {
     const inputEl = useRef(null);
     const dispatch = useDispatch();
     const transferCheckedState = useSelector(state => state.filters.transfersAmount[transferNumber]);
