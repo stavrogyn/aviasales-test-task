@@ -7,6 +7,7 @@ import {
     FASTEST,
     OPTIMAL
 } from '../constants/sort.constants';
+import getDisplayedTickets from '../selectors/getDisplayedTickets'
 import { rerenderTickets } from '../actions/search.actions';
 import sortTickets from '../../helpers/sortTickets';
 
@@ -22,7 +23,7 @@ function* sagaSortCheapestWatcher () {
 }
   
 function* sagaSortCheapestWorker() {
-    const currentDisplayedTickets = yield select(state => state.search.ticketsToDisplay);
+    const currentDisplayedTickets = yield select(getDisplayedTickets);
     const ticketsToDisplay = sortTickets(currentDisplayedTickets, CHEAPEST)
     yield put(rerenderTickets(ticketsToDisplay));
 }
@@ -32,7 +33,7 @@ function* sagaSortFastestWatcher () {
 }
   
 function* sagaSortFastestWorker() {
-    const currentDisplayedTickets = yield select(state => state.search.ticketsToDisplay);
+    const currentDisplayedTickets = yield select(getDisplayedTickets);
     const ticketsToDisplay = sortTickets(currentDisplayedTickets, FASTEST)
     yield put(rerenderTickets(ticketsToDisplay));
 }
@@ -42,7 +43,7 @@ function* sagaSortOptimalWatcher () {
 }
   
 function* sagaSortOptimalWorker() {
-    const currentDisplayedTickets = yield select(state => state.search.ticketsToDisplay);
+    const currentDisplayedTickets = yield select(getDisplayedTickets);
     const ticketsToDisplay = sortTickets(currentDisplayedTickets, OPTIMAL)
     yield put(rerenderTickets(ticketsToDisplay));
 }

@@ -8,6 +8,9 @@ import {
     rerenderTickets,
     finishSearch
 } from '../actions/search.actions';
+import getAllTickets from '../selectors/getAllTickets';
+import getSort from '../selectors/getSort';
+import getTransfersAmount from '../selectors/getTransfersAmount';
 import { changeTotalAmountOfTransfersAmountFilter } from '../actions/filter.actions'
 import filterTickets from '../../helpers/filterTickets';
 import sortTickets from '../../helpers/sortTickets';
@@ -26,9 +29,9 @@ function* sagaSearchWorker() {
         yield put(sendResultsRequest());
         [fetchedTickets, stopSearchMarker] = yield call([api, api.getTickets]);
         yield put(processResultsResponse(fetchedTickets));
-        const currentTicketsInStore = yield select(state => state.search.allTickets);
-        const currentFilterState = yield select(state => state.filters.transfersAmount);
-        const currentSortState = yield select(state => state.sort);
+        const currentTicketsInStore = yield select(getAllTickets);
+        const currentFilterState = yield select(getTransfersAmount);
+        const currentSortState = yield select(getSort);
         ticketsToDisplay = filterTickets(currentTicketsInStore, currentFilterState)
         ticketsToDisplay = sortTickets(ticketsToDisplay, currentSortState)
         yield put(rerenderTickets(ticketsToDisplay));
