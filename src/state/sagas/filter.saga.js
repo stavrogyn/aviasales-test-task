@@ -5,12 +5,8 @@ import {
     FILTERS_ALL_TRANSFERS_AMOUNT_DID_CHECK,
     FILTERS_ALL_TRANSFERS_AMOUNT_DID_UNCHECK
 } from '../constants/filter.constants';
-import getAllTickets from '../selectors/getAllTickets';
-import getSort from '../selectors/getSort';
-import getTransfersAmount from '../selectors/getTransfersAmount';
 import { rerenderTickets } from '../actions/search.actions';
-import filterTickets from '../../helpers/filterTickets';
-import sortTickets from "../../helpers/sortTickets";
+import { sortedAndFilteredTicketsSelector } from '../selectors';
 
 
 export default function* sagaFilterkWatcher () {
@@ -23,11 +19,6 @@ export default function* sagaFilterkWatcher () {
 }
 
 function* sagaFilterkWorker() {
-    let ticketsToDisplay;
-    const currentTicketsInStore = yield select(getAllTickets);
-    const currentFilterState = yield select(getTransfersAmount);
-    const currentSortState = yield select(getSort);
-    ticketsToDisplay = filterTickets(currentTicketsInStore, currentFilterState);
-    ticketsToDisplay = sortTickets(ticketsToDisplay, currentSortState);
+    const ticketsToDisplay = yield select(sortedAndFilteredTicketsSelector);
     yield put(rerenderTickets(ticketsToDisplay));
 }
