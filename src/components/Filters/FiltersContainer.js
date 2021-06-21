@@ -1,4 +1,4 @@
-import TransfersAmount from './TransfersAmount/TransfersAmount'
+import TransfersAmount from './TransfersAmount/TransfersAmountContainer'
 
 export default function Filters () {
     return (

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import TransferAmountCellOneTransfers from './TransferAmountCellOneTransfers'
-import TransferAmountCellAllTransfers from './TransferAmountCellAllTransfers'
+import TransferAmountCellOneTransfers from './TransfersAmountCellParticularTransfer'
+import TransferAmountCellAllTransfers from './TransfersAmountCellAllTransfers'
 
 export default function TransfersAmount () {
     const transfersState = useSelector(state => state.filters.transfersAmount);

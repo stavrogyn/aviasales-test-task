@@ -1,4 +1,4 @@
-import Filters from './Filters/Filters'
+import Filters from './Filters/FiltersContainer'
 import Sorts from './Sorts'
 import Results from './Results/Results'
 

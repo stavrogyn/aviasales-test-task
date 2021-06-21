@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import Ticket from '../components/Ticket/Ticket'
+import Ticket from '../components/Ticket/TicketContainer'
 
 
 export default function useTickets () {

@@ -1,4 +1,4 @@
-export default function ResultsStub () {
+export default function EmptyResultsStub () {
     return (
         <div className="results-stub">
             <h2>Билетов — нет.</h2> 
