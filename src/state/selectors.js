@@ -1,6 +1,6 @@
 import { createSelector } from "reselect";
-import filterTickets from '../helpers/filterTickets';
-import sortTickets from '../helpers/sortTickets';
+import filterTickets from '../utils/filterTickets';
+import sortTickets from '../utils/sortTickets';
 
 const getAllTickets = state =>  state.search.allTickets;
 

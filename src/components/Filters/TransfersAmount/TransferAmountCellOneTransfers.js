@@ -4,7 +4,7 @@ import {
     checkTransfersAmountFilter,
     uncheckTransfersAmountFilter,
 } from '../../../state/actions/filter.actions'
-import transfersAmountsToString from '../../../helpers/getTransferName'
+import transfersAmountsToString from '../../../utils/getTransferName'
 
 export default function TransferAmountCellOneTransfers ({ transferNumber }) {
     const inputEl = useRef(null);

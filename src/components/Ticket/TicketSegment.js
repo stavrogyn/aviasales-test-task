@@ -1,4 +1,4 @@
-import transfersAmountsToString from '../../helpers/getTransferName'
+import transfersAmountsToString from '../../utils/getTransferName'
 
 export default function TicketSegment ({ origin, destination, date, stops, duration }) {
 
