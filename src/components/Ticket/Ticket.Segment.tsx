@@ -1,7 +1,6 @@
 import transfersAmountsToString from "../../utils/transfersAmountsToString";
-import { SegmentInterface } from "../../state/state.type";
+import { SegmentInterface, TransferNumberType } from "../../state/state.type";
 
-type TransferNumberType = 1 | 2 | 3 | 4 | 5 | 6;
 
 const TicketSegment: React.FC<SegmentInterface> = ({
   origin,
