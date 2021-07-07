@@ -1,29 +1,40 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import Ticket from '../components/Ticket/Ticket.container';
-import stateInterface, { TicketsInterface, TicketInterface } from '../state/state.type'
+import Ticket from "../components/Ticket/Ticket.container";
+import stateInterface, {
+  TicketsInterface,
+  TicketInterface,
+} from "../state/state.type";
 
-
-type mapTicketDataToFiveTicketComponentsType = (ticketsData: TicketsInterface) => JSX.Element[]
+type mapTicketDataToFiveTicketComponentsType = (
+  ticketsData: TicketsInterface
+) => JSX.Element[];
 
 const useTickets = () => {
-  
-    const mapTicketDataToFiveTicketComponents: mapTicketDataToFiveTicketComponentsType = (ticketsData) => {
-      const firstFiveTickets = ticketsData.slice(0, 5).map((ticketData: TicketInterface, i) => <Ticket {...ticketData} key={i} />)
-      return firstFiveTickets
-    }
+  const mapTicketDataToFiveTicketComponents: mapTicketDataToFiveTicketComponentsType =
+    (ticketsData) => {
+      const firstFiveTickets = ticketsData
+        .slice(0, 5)
+        .map((ticketData: TicketInterface, i) => (
+          <Ticket {...ticketData} key={i} />
+        ));
+      return firstFiveTickets;
+    };
 
-    const ticketsData = useSelector((state: stateInterface) => state.search.ticketsToDisplay);
-    const [ticketsToDisplay, setTicketsToDisplay] = useState(mapTicketDataToFiveTicketComponents(ticketsData))
+  const ticketsData = useSelector(
+    (state: stateInterface) => state.search.ticketsToDisplay
+  );
+  const [ticketsToDisplay, setTicketsToDisplay] = useState(
+    mapTicketDataToFiveTicketComponents(ticketsData)
+  );
 
-  
-    useEffect(() => {
-      const newTicketsToDisplay = mapTicketDataToFiveTicketComponents(ticketsData)
-      return setTicketsToDisplay(newTicketsToDisplay)
-    }, [ticketsData]);
-  
-    return ticketsToDisplay
-    
-  }
+  useEffect(() => {
+    const newTicketsToDisplay =
+      mapTicketDataToFiveTicketComponents(ticketsData);
+    return setTicketsToDisplay(newTicketsToDisplay);
+  }, [ticketsData]);
 
-  export default useTickets
+  return ticketsToDisplay;
+};
+
+export default useTickets;

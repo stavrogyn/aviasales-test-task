@@ -1,15 +1,14 @@
-import stateInterface from './state.type'
+import stateInterface from "./state.type";
 
 const initialState: stateInterface = {
-    search: {
-        allTickets: [],
-        ticketsToDisplay: []
-    },
-    sort: 'CHEAPEST',
-    filters: {
-        transfersAmount: {
-        }
-    }
-}
+  search: {
+    allTickets: [],
+    ticketsToDisplay: [],
+  },
+  sort: "CHEAPEST",
+  filters: {
+    transfersAmount: {},
+  },
+};
 
-export default initialState
+export default initialState;

@@ -1,9 +1,9 @@
-import { Provider } from 'react-redux';
-import configureStore from '../state/configureStore'
-import Header from './Header'
-import Main from './Main';
+import { Provider } from "react-redux";
+import configureStore from "../state/configureStore";
+import Header from "./Header";
+import Main from "./Main";
 
-const store = configureStore()
+const store = configureStore();
 
 const App: React.FC = () => {
   return (
@@ -16,6 +16,6 @@ const App: React.FC = () => {
       </div>
     </Provider>
   );
-}
+};
 
-export default App
+export default App;
