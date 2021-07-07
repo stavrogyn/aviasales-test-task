@@ -1,4 +1,4 @@
-type TransferNumberType = 1 | 2 | 3 | 4 | 5 | 6;
+import { TransferNumberType } from '../state/state.type'
 
 /**
 * @description Expect that "6 transfers" is the maximum possible value

@@ -13,6 +13,8 @@ export type FiltersType = {
 
 export type SortType = 'CHEAPEST' | 'FASTEST' | 'OPTIMAL'
 
+export type TransferNumberType = 1 | 2 | 3 | 4 | 5 | 6;
+
 export type transfersAmountInterface = {
   1?: boolean,
   2?: boolean,

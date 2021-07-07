@@ -2,8 +2,7 @@ import { useSelector } from "react-redux";
 import TransferAmountCellOneTransfers from './TransfersAmount.ParticularTransfer'
 import TransferAmountCellAllTransfers from './TransfersAmount.AllTransfers'
 import stateInterface from '../../../state/state.type'
-
-type TransferNumberType = 1 | 2 | 3 | 4 | 5 | 6;
+import { TransferNumberType } from '../../../state/state.type'
 
 
 const TransfersAmount: React.FC = () => {

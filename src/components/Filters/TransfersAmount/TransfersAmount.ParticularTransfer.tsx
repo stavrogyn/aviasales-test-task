@@ -5,10 +5,10 @@ import {
     uncheckTransfersAmountFilter,
 } from '../../../state/actions/filter.actions'
 import transfersAmountsToString from '../../../utils/transfersAmountsToString'
-import stateInterface from '../../../state/state.type'
+import stateInterface, { TransferNumberType } from '../../../state/state.type'
 
 interface TransferAmountCellOneTransfersProps {
-    transferNumber: 1 | 2 | 3 | 4 | 5 | 6
+    transferNumber: TransferNumberType
 }
 
 const TransferAmountCellOneTransfers: React.FC<TransferAmountCellOneTransfersProps> = ({ transferNumber }) => {
