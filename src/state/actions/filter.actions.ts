@@ -8,21 +8,30 @@ import {
 } from "../constants/filter.constants";
 import { TransfersAmountInterface } from "../state.type";
 
-export const checkTransfersAmountFilter = (transferNumber: number) => ({
+const checkTransfersAmountFilter = (transferNumber: number) => ({
   type: FILTERS_TRANSFERS_AMOUNT_DID_CHECK,
   transferNumber,
 });
-export const uncheckTransfersAmountFilter = (transferNumber: number) => ({
+const uncheckTransfersAmountFilter = (transferNumber: number) => ({
   type: FILTERS_TRANSFERS_AMOUNT_DID_UNCHECK,
   transferNumber,
 });
-export const checkAllTransfersAmountFilter = () => ({
+const checkAllTransfersAmountFilter = () => ({
   type: FILTERS_ALL_TRANSFERS_AMOUNT_DID_CHECK,
 });
-export const uncheckAllTransfersAmountFilter = () => ({
+const uncheckAllTransfersAmountFilter = () => ({
   type: FILTERS_ALL_TRANSFERS_AMOUNT_DID_UNCHECK,
 });
-export const changeTotalAmountOfTransfersAmountFilter = (
+const changeTotalAmountOfTransfersAmountFilter = (
   newTransfers: TransfersAmountInterface
 ) => ({ type: FILTERS_TOTAL_TRANSFERS_AMOUNT_WAS_CHANGED, newTransfers });
-export const refreshFilterState = () => ({ type: REFRESH_TRANSFERS_AMOUNT_STATE });
+const refreshFilterState = () => ({ type: REFRESH_TRANSFERS_AMOUNT_STATE });
+
+export {
+  checkTransfersAmountFilter,
+  uncheckTransfersAmountFilter,
+  checkAllTransfersAmountFilter,
+  uncheckAllTransfersAmountFilter,
+  changeTotalAmountOfTransfersAmountFilter,
+  refreshFilterState,
+};

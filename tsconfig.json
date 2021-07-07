@@ -23,6 +23,5 @@
     "removeComments": true,
     "noEmitOnError": false
   },
-  "include": ["src"],
-  "exclude": ["cypress"]
+  "include": ["src"]
 }
