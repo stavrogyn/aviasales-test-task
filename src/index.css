@@ -128,7 +128,7 @@
 
 .filters-transfers_amout-cell input:not(:checked) + label:after,
 .filters-transfers_amout-cell input:checked + label:after {
-  content: url(./img/checkmark.svg);
+  content: url(./images/checkmark.svg);
   position: absolute;
   top: 8px;
   left: 5px;
