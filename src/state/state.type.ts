@@ -8,14 +8,13 @@ export default interface stateInterface {
 }
 
 export type FiltersType = {
-  transfersAmount: transfersAmountInterface
+  transfersAmount: TransfersAmountInterface
 }
 
 export type SortType = 'CHEAPEST' | 'FASTEST' | 'OPTIMAL'
 
 export type TransferNumberType = 1 | 2 | 3 | 4 | 5 | 6;
-
-export type transfersAmountInterface = {
+export interface TransfersAmountInterface {
   1?: boolean,
   2?: boolean,
   3?: boolean,

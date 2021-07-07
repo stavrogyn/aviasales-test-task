@@ -10,7 +10,7 @@ import {
 } from '../actions/search.actions';
 import { sortedAndFilteredTicketsSelector, totalAmountOfTransfersSelector } from '../selectors';
 import { changeTotalAmountOfTransfersAmountFilter } from '../actions/filter.actions'
-import { TicketsInterface, transfersAmountInterface } from "../state.type";
+import { TicketsInterface, TransfersAmountInterface } from "../state.type";
 
 
 
@@ -29,7 +29,7 @@ function* sagaSearchWorker() {
         yield put(processResultsResponse(fetchedTickets));
         const ticketsToDisplay: TicketsInterface = yield select(sortedAndFilteredTicketsSelector);
         yield put(rerenderTickets(ticketsToDisplay));
-        const totalAmountOfTransfers: transfersAmountInterface = yield select(totalAmountOfTransfersSelector);
+        const totalAmountOfTransfers: TransfersAmountInterface = yield select(totalAmountOfTransfersSelector);
         yield put(changeTotalAmountOfTransfersAmountFilter(totalAmountOfTransfers))
     }
     yield put(finishSearch())
