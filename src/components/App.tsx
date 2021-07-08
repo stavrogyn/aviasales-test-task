@@ -4,7 +4,7 @@ import configureStore from "../state/configureStore";
 import Header from "./Header";
 import Main from "./Main";
 
-const store = configureStore();
+export const store = configureStore();
 
 const App: React.FC = () => {
   return (
