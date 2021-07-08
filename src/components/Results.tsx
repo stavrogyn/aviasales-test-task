@@ -1,3 +1,4 @@
+import React from 'react';
 import useTickets from "../hooks/useTickets";
 
 const EmptyResultsStub: React.FC = () => {
@@ -13,7 +14,7 @@ const EmptyResultsStub: React.FC = () => {
 };
 
 const Results: React.FC = () => {
-  let ticketsToDisplay = useTickets();
+  const ticketsToDisplay = useTickets();
   return (
     <div className="results">
       {ticketsToDisplay.length === 0 ? <EmptyResultsStub /> : ticketsToDisplay}

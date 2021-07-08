@@ -1,3 +1,4 @@
+import React from 'react';
 import useImage from "../../hooks/useImage";
 import CarrierStub from "../../images/airplane-stub.svg";
 

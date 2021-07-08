@@ -1,3 +1,4 @@
+import React from 'react';
 import transfersAmountsToString from "../../utils/transfersAmountsToString";
 import { SegmentInterface } from "../../state/state.type";
 

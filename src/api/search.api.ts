@@ -10,7 +10,7 @@ interface SearchApiInterface {
 export default class SearchApi implements SearchApiInterface {
   private initialURL: string;
   private resultURL: string;
-  private searchId: string = "";
+  private searchId = "";
 
   constructor(
     private readonly host: string | undefined = process.env.REACT_APP_HOST,

@@ -1,3 +1,4 @@
+import React from 'react';
 import CarrierLogo from "./Ticket.CarrierLogo";
 import TicketSegment from "./Ticket.Segment";
 import { TicketInterface } from "../../state/state.type";

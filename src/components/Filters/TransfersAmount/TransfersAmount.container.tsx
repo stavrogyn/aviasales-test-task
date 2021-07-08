@@ -1,3 +1,4 @@
+import React from 'react';
 import { useSelector } from "react-redux";
 import TransferAmountCellOneTransfers from "./TransfersAmount.ParticularTransfer";
 import TransferAmountCellAllTransfers from "./TransfersAmount.AllTransfers";
