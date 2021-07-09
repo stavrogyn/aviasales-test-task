@@ -1,0 +1,25 @@
+[
+  {
+    "price": 52993,
+    "carrier": "S7",
+    "segments": [
+      {
+        "origin": "MOW",
+        "destination": "HKT",
+        "date": "2021-07-16T02:46:00.000Z",
+        "stops": [
+          "HKG",
+          "IST"
+        ],
+        "duration": 1199
+      },
+      {
+        "origin": "HKT",
+        "destination": "MOW",
+        "date": "2021-08-05T03:21:00.000Z",
+        "stops": [],
+        "duration": 1513
+      }
+    ]
+  }
+]

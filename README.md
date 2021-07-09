@@ -2,6 +2,23 @@
 
 https://aviasales-test-exercise.herokuapp.com
 
+# В проект добавлены тесты на Cypress:
+
+Опробован подход Application Actions: теперь состоянием приложения можно управлять напрямую из тестов.
+Это полезно, когда мы хотим задиспатчить тестовые данные перед прогоном определенного теста.
+
+Чтобы запустить тесты из проекта:
+
+```
+npm run e2e
+```
+
+Чтобы запустить Cypress Test Runner:
+
+```
+npx cypress open
+```
+
 # Тестовое задание Aviasales ([frontend](https://aviasales.recruitee.com/o/frontend-developer-js-coffeescript-react%C2%A0redux--aviasalesru))
 
 Основной frontend проект нашей команды — это страница выдачи билетов со множеством фильтров, настроек и, собственно, билетов.
