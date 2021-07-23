@@ -8,7 +8,7 @@ const getAllTickets = (state: stateInterface) => state.search.allTickets;
 const getDisplayedTickets = (state: stateInterface) =>
   state.search.ticketsToDisplay;
 
-const getSort = (state: stateInterface) => state.sort;
+export const getSort = (state: stateInterface) => state.sort;
 
 const getTransfersAmount = (state: stateInterface) =>
   state.filters.transfersAmount;
