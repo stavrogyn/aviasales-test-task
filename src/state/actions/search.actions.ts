@@ -7,15 +7,16 @@ import {
   SEARCH_FINISHED,
   REFRESH_SEARCH_STATE,
 } from "../constants/search.constants";
+import { TicketsInterface } from '../state.type'
 
 const sendInitialRequest = () => ({ type: INITIAL_REQUEST_DID_SEND });
 const processInitialResponse = () => ({ type: INITIAL_RESPONSE_WAS_RECIEVED });
 const sendResultsRequest = () => ({ type: RESULT_REQUEST_DID_SEND });
-const processResultsResponse = (tickets: any) => ({
+const processResultsResponse = (tickets: TicketsInterface) => ({
   type: RESULT_RESPONSE_WAS_RECIEVED,
   tickets,
 });
-const rerenderTickets = (tickets: any) => ({
+const rerenderTickets = (tickets: TicketsInterface) => ({
   type: RERENDER_DISPLAYED_TICKETS,
   tickets,
 });
