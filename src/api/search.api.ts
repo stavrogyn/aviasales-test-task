@@ -13,7 +13,8 @@ export default class SearchApi implements SearchApiInterface {
   private searchId = "";
 
   constructor(
-    private readonly host: string = process.env.REACT_APP_HOST ?? "https://front-test.beta.aviasales.ru",
+    private readonly host: string = process.env.REACT_APP_HOST ??
+      "https://front-test.beta.aviasales.ru",
     private retries: number = 5
   ) {
     this.initialURL = `${this.host}/search`;

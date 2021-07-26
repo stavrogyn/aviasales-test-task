@@ -7,7 +7,7 @@ import {
   SEARCH_FINISHED,
   REFRESH_SEARCH_STATE,
 } from "../constants/search.constants";
-import { TicketsInterface } from '../state.type'
+import { TicketsInterface } from "../state.type";
 
 const sendInitialRequest = () => ({ type: INITIAL_REQUEST_DID_SEND });
 const processInitialResponse = () => ({ type: INITIAL_RESPONSE_WAS_RECIEVED });

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Ticket from "../components/Ticket/Ticket.container";

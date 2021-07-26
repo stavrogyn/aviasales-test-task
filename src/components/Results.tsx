@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import useTickets from "../hooks/useTickets";
 
 const EmptyResultsStub: React.FC = () => {

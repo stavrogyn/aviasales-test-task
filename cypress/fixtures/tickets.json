@@ -7,10 +7,7 @@
         "origin": "MOW",
         "destination": "HKT",
         "date": "2021-07-16T02:46:00.000Z",
-        "stops": [
-          "HKG",
-          "IST"
-        ],
+        "stops": ["HKG", "IST"],
         "duration": 1199
       },
       {

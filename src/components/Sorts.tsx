@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   sortByCheapest,
@@ -6,8 +6,8 @@ import {
   sortByOptimal,
 } from "../state/actions/sort.actions";
 import { CHEAPEST, FASTEST, OPTIMAL } from "../state/constants/sort.constants";
-import { SortType } from '../state/state.type'
-import { getSort } from '../state/selectors'
+import { SortType } from "../state/state.type";
+import { getSort } from "../state/selectors";
 
 const Sorts: React.FC = () => {
   const dispatch = useDispatch();
@@ -15,16 +15,16 @@ const Sorts: React.FC = () => {
   const memoizedSort = (sortType: SortType) => {
     switch (sortType) {
       case CHEAPEST:
-        sortState != CHEAPEST && dispatch(sortByCheapest())
+        sortState != CHEAPEST && dispatch(sortByCheapest());
         break;
       case FASTEST:
-        sortState != FASTEST && dispatch(sortByFastest())
+        sortState != FASTEST && dispatch(sortByFastest());
         break;
       case OPTIMAL:
-        sortState != OPTIMAL && dispatch(sortByOptimal())
+        sortState != OPTIMAL && dispatch(sortByOptimal());
         break;
     }
-  }
+  };
 
   return (
     <div className="sorts">

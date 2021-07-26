@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import TransfersAmount from "./TransfersAmount/TransfersAmount.container";
 
 const Filters: React.FC = () => {
@@ -7,6 +7,6 @@ const Filters: React.FC = () => {
       <TransfersAmount />
     </div>
   );
-}
+};
 
-export default Filters
+export default Filters;

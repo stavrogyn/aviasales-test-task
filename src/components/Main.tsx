@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Filters from "./Filters/Filters.container";
 import Sorts from "./Sorts";
 import Results from "./Results";
