@@ -6,7 +6,7 @@ import {
   sortByOptimal,
 } from "../state/actions/sort.actions";
 import { CHEAPEST, FASTEST, OPTIMAL } from "../state/constants/sort.constants";
-import { SortType } from "../state/state.type";
+import { SortType } from "../state/state.types";
 import { getSort } from "../state/selectors";
 
 const Sorts: React.FC = () => {

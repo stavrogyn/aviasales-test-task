@@ -19,6 +19,10 @@
   },
   "plugins": ["cypress", "react", "@typescript-eslint"],
   "rules": {
-    "react/prop-types": "off"
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }

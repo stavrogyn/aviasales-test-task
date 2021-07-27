@@ -1,7 +1,7 @@
 import { CHEAPEST, FASTEST, OPTIMAL } from "../state/constants/sort.constants";
-import { TicketsInterface, SortType } from "../state/state.type";
+import { Tickets, SortType } from "../state/state.types";
 
-export default function sortTickets(tickets: TicketsInterface, sort: SortType) {
+export default function sortTickets(tickets: Tickets, sort: SortType) {
   switch (sort) {
     case CHEAPEST:
       return tickets.sort((a, b) => a.price - b.price);

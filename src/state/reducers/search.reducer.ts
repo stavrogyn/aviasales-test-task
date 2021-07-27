@@ -8,11 +8,11 @@ import {
   REFRESH_SEARCH_STATE,
 } from "../constants/search.constants";
 import initialState from "../initialState";
-import { TicketsInterface } from "../state.type";
+import { Tickets } from "../state.types";
 
 type SearchActionType = {
   type: string;
-  tickets: TicketsInterface;
+  tickets: Tickets;
 };
 
 export default function searchReducer(

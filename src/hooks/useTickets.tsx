@@ -2,13 +2,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Ticket from "../components/Ticket/Ticket.container";
-import stateInterface, {
-  TicketsInterface,
+import AppState, {
+  Tickets,
   TicketInterface,
-} from "../state/state.type";
+} from "../state/state.types";
 
 type mapTicketDataToFiveTicketComponentsType = (
-  ticketsData: TicketsInterface
+  ticketsData: Tickets
 ) => JSX.Element[];
 
 const useTickets: () => JSX.Element[] = () => {
@@ -23,7 +23,7 @@ const useTickets: () => JSX.Element[] = () => {
     };
 
   const ticketsData = useSelector(
-    (state: stateInterface) => state.search.ticketsToDisplay
+    (state: AppState) => state.search.ticketsToDisplay
   );
   const [ticketsToDisplay, setTicketsToDisplay] = useState(
     mapTicketDataToFiveTicketComponents(ticketsData)

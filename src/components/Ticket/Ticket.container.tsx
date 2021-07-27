@@ -1,24 +1,13 @@
 import React from "react";
 import CarrierLogo from "./Ticket.CarrierLogo";
 import TicketSegment from "./Ticket.Segment";
-import { TicketInterface } from "../../state/state.type";
+import { TicketInterface } from "../../state/state.types";
 
 const Ticket: React.FC<TicketInterface> = ({ price, carrier, segments }) => {
   const ticketSegments = segments.map((segment, i) => (
     <TicketSegment {...segment} key={i} />
   ));
-  const priceWithSpacing = price
-    .toString()
-    .split("")
-    .reverse()
-    .map((e, i) => {
-      if (i % 3 === 0 && i !== 0) {
-        e = `${e} `;
-      }
-      return e;
-    })
-    .reverse()
-    .join("");
+  const priceWithSpacing = Intl.NumberFormat('ru').format(price)
 
   return (
     <div className="ticket">

@@ -1,31 +1,61 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import TransferAmountCellOneTransfers from "./TransfersAmount.ParticularTransfer";
+import { ChangeEvent} from 'react'; 
+import { useSelector, useDispatch } from "react-redux";
+
+import {
+  checkTransfersAmountFilter,
+  uncheckTransfersAmountFilter,
+  checkAllTransfersAmountFilter,
+  uncheckAllTransfersAmountFilter
+} from "../../../state/actions/filter.actions";
+import { TransferAmountCellOneTransfer } from "./TransfersAmount.ParticularTransfer";
 import TransferAmountCellAllTransfers from "./TransfersAmount.AllTransfers";
-import stateInterface from "../../../state/state.type";
-import { TransferNumberType } from "../../../state/state.type";
+import { TransferNumber } from "../../../state/state.types";
+import { getTransfersAmount } from '../../../state/selectors'
 
-const TransfersAmount: React.FC = () => {
-  const transfersState = useSelector(
-    (state: stateInterface) => state.filters.transfersAmount
-  );
+const TransfersAmount = () => {
+  const dispatch = useDispatch();
+  const transfersAmountState = useSelector(getTransfersAmount);
 
-  const transfersCells: JSX.Element[] = Object.entries(transfersState).map(
+  const handleChangeOneTransfersCell = (transferNumber: TransferNumber) => {
+    return (event: ChangeEvent<HTMLInputElement>) => {
+      if (event.target.checked) {
+        dispatch(checkTransfersAmountFilter(transferNumber));
+      } else {
+        dispatch(uncheckTransfersAmountFilter(transferNumber));
+      }
+    }
+  };
+
+  const transfersCells = Object.entries(transfersAmountState).map(
     (transfer, i) => {
-      const transferNumber = parseInt(transfer[0]) as TransferNumberType;
+      const [transferName, transferState] = transfer;
+      const transferNumber = Number(transferName) as TransferNumber;
       return (
-        <TransferAmountCellOneTransfers
+        <TransferAmountCellOneTransfer
           transferNumber={transferNumber}
+          checked={transferState}
+          onChange={handleChangeOneTransfersCell(transferNumber)}
           key={i}
         />
       );
     }
   );
 
+  const handleChangeAllTransfersCells = (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.checked) {
+      dispatch(checkAllTransfersAmountFilter());
+    } else {
+      dispatch(uncheckAllTransfersAmountFilter());
+    }
+  };
+
+
   return (
-    <div className="filters-transfers_amout">
-      <div className="filters-transfers_amout-title">КОЛИЧЕСТВО ПЕРЕСАДОК</div>
-      <TransferAmountCellAllTransfers />
+    <div className="filters-transfers_amount">
+      <div className="filters-transfers_amount-title">
+        КОЛИЧЕСТВО ПЕРЕСАДОК
+      </div>
+      <TransferAmountCellAllTransfers onChange={handleChangeAllTransfersCells} />
       {transfersCells}
     </div>
   );

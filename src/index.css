@@ -66,7 +66,7 @@
   margin: 0 10px;
 }
 
-.filters-transfers_amout {
+.filters-transfers_amount {
   background-color: var(--card-white);
   width: 90%;
   border-radius: 5px;
@@ -77,7 +77,7 @@
   padding: 10px 0px;
 }
 
-.filters-transfers_amout-title {
+.filters-transfers_amount-title {
   font-size: 12px;
   line-height: 12px;
   letter-spacing: 0.5px;
@@ -86,7 +86,7 @@
   margin: 10px auto;
 }
 
-.filters-transfers_amout-cell {
+.filters-transfers_amount-cell {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -97,26 +97,26 @@
   padding: 10px;
 }
 
-.filters-transfers_amout-cell:hover {
+.filters-transfers_amount-cell:hover {
   background-color: #f1fcff;
 }
 
-.filters-transfers_amout-cell input:not(:checked),
-.filters-transfers_amout-cell input:checked {
+.filters-transfers_amount-cell input:not(:checked),
+.filters-transfers_amount-cell input:checked {
   position: absolute;
   left: 0;
   opacity: 0.01;
 }
 
-.filters-transfers_amout-cell input:not(:checked) + label,
-.filters-transfers_amout-cell input:checked + label {
+.filters-transfers_amount-cell input:not(:checked) + label,
+.filters-transfers_amount-cell input:checked + label {
   position: relative;
   padding-left: 2.3em;
   cursor: pointer;
 }
 
-.filters-transfers_amout-cell input:not(:checked) + label:before,
-.filters-transfers_amout-cell input:checked + label:before {
+.filters-transfers_amount-cell input:not(:checked) + label:before,
+.filters-transfers_amount-cell input:checked + label:before {
   content: "";
   position: absolute;
   left: 0;
@@ -127,8 +127,8 @@
   border-radius: 2px;
 }
 
-.filters-transfers_amout-cell input:not(:checked) + label:after,
-.filters-transfers_amout-cell input:checked + label:after {
+.filters-transfers_amount-cell input:not(:checked) + label:after,
+.filters-transfers_amount-cell input:checked + label:after {
   content: url(./images/checkmark.svg);
   position: absolute;
   top: 8px;
@@ -138,25 +138,25 @@
   line-height: 0;
 }
 
-.filters-transfers_amout-cell input:not(:checked) + label:after {
+.filters-transfers_amount-cell input:not(:checked) + label:after {
   opacity: 0;
 }
 
-.filters-transfers_amout-cell input:checked + label:after {
+.filters-transfers_amount-cell input:checked + label:after {
   opacity: 1;
 }
 
-.filters-transfers_amout-cell input:checked + label:before {
+.filters-transfers_amount-cell input:checked + label:before {
   border: 1px solid #2196f3;
 }
 
-.filters-transfers_amout-cell input {
+.filters-transfers_amount-cell input {
   margin: 5px;
   text-align: right;
   border: 1px solid #9abbce;
 }
 
-.filters-transfers_amout-cell label {
+.filters-transfers_amount-cell label {
   display: block;
   margin-left: 5px;
   padding: 1px;

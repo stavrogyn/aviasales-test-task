@@ -6,7 +6,7 @@ import {
   FILTERS_TOTAL_TRANSFERS_AMOUNT_WAS_CHANGED,
   REFRESH_TRANSFERS_AMOUNT_STATE,
 } from "../constants/filter.constants";
-import { TransfersAmountInterface } from "../state.type";
+import { TransfersAmount } from "../state.types";
 
 const checkTransfersAmountFilter = (transferNumber: number) => ({
   type: FILTERS_TRANSFERS_AMOUNT_DID_CHECK,
@@ -23,7 +23,7 @@ const uncheckAllTransfersAmountFilter = () => ({
   type: FILTERS_ALL_TRANSFERS_AMOUNT_DID_UNCHECK,
 });
 const changeTotalAmountOfTransfersAmountFilter = (
-  newTransfers: TransfersAmountInterface
+  newTransfers: TransfersAmount
 ) => ({ type: FILTERS_TOTAL_TRANSFERS_AMOUNT_WAS_CHANGED, newTransfers });
 const refreshFilterState = () => ({ type: REFRESH_TRANSFERS_AMOUNT_STATE });
 

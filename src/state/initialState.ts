@@ -1,6 +1,6 @@
-import stateInterface from "./state.type";
+import AppState from "./state.types";
 
-const initialState: stateInterface = {
+const initialState: AppState = {
   search: {
     allTickets: [],
     ticketsToDisplay: [],

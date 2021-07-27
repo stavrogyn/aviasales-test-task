@@ -1,8 +1,8 @@
 import React from "react";
-import transfersAmountsToString from "../../utils/transfersAmountsToString";
-import { SegmentInterface, TransferNumberType } from "../../state/state.type";
+import stringifyTransfersAmounts from "../../utils/stringifyTransfersAmounts";
+import { Segment, TransferNumber } from "../../state/state.types";
 
-const TicketSegment: React.FC<SegmentInterface> = ({
+const TicketSegment: React.FC<Segment> = ({
   origin,
   destination,
   date,
@@ -21,8 +21,8 @@ const TicketSegment: React.FC<SegmentInterface> = ({
   const arrivalTimeToDisplay: string = getHoursAndMinutesString(arrivalTime);
   const hoursDuration: number = Math.trunc(duration / 60);
   const minutesDuration: number = duration % 60;
-  const { ru: transfersAmountString } = transfersAmountsToString(
-    stops.length as TransferNumberType
+  const { ru: transfersAmountString } = stringifyTransfersAmounts(
+    stops.length as TransferNumber
   );
 
   return (

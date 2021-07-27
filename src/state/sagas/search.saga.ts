@@ -1,4 +1,4 @@
-import SearchApi from "../../api/search.api";
+import { fetchSearchId, fetchTickets } from "../../api/search.api";
 import { call, put, select, takeEvery } from "redux-saga/effects";
 import { INITIAL_REQUEST_DID_SEND } from "../constants/search.constants";
 import {
@@ -9,11 +9,11 @@ import {
   finishSearch,
 } from "../actions/search.actions";
 import {
-  sortedAndFilteredTicketsSelector,
-  totalAmountOfTransfersSelector,
+  getSortedAndFilteredTickets,
+  getAllUniqieAmountOfTransfers,
 } from "../selectors";
 import { changeTotalAmountOfTransfersAmountFilter } from "../actions/filter.actions";
-import { TicketsInterface, TransfersAmountInterface } from "../state.type";
+import { Tickets, TransfersAmount } from "../state.types";
 
 export default function* sagaSearchWatcher() {
   yield takeEvery(INITIAL_REQUEST_DID_SEND, sagaSearchWorker);
@@ -22,19 +22,20 @@ export default function* sagaSearchWatcher() {
 function* sagaSearchWorker() {
   let stopSearchMarker = false,
     fetchedTickets;
-  const api: SearchApi = yield new SearchApi();
-  yield call([api, api.getSearchId]);
+  const { searchId } = yield call(fetchSearchId);
   yield put(processInitialResponse());
   while (!stopSearchMarker) {
     yield put(sendResultsRequest());
-    [fetchedTickets, stopSearchMarker] = yield call([api, api.getTickets]);
+    const { stop, tickets } = yield call(fetchTickets, searchId);
+    stopSearchMarker = stop;
+    fetchedTickets = tickets;
     yield put(processResultsResponse(fetchedTickets));
-    const ticketsToDisplay: TicketsInterface = yield select(
-      sortedAndFilteredTicketsSelector
+    const ticketsToDisplay: Tickets = yield select(
+      getSortedAndFilteredTickets
     );
     yield put(rerenderTickets(ticketsToDisplay));
-    const totalAmountOfTransfers: TransfersAmountInterface = yield select(
-      totalAmountOfTransfersSelector
+    const totalAmountOfTransfers: TransfersAmount = yield select(
+      getAllUniqieAmountOfTransfers
     );
     yield put(changeTotalAmountOfTransfersAmountFilter(totalAmountOfTransfers));
   }

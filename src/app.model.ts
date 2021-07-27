@@ -3,11 +3,11 @@ import {
   sendInitialRequest,
   rerenderTickets,
 } from "./state/actions/search.actions";
-import { TicketsInterface } from "./state/state.type";
+import { Tickets } from "./state/state.types";
 
 interface AppModelInterface {
   startSearch: () => void;
-  showTickets: (tickets: TicketsInterface) => void;
+  showTickets: (tickets: Tickets) => void;
 }
 
 /**
@@ -18,7 +18,7 @@ export default class AppModel implements AppModelInterface {
     return store.dispatch(sendInitialRequest());
   };
 
-  showTickets: (tickets: TicketsInterface) => void = (tickets) => {
+  showTickets: (tickets: Tickets) => void = (tickets) => {
     return store.dispatch(rerenderTickets(tickets));
   };
 }

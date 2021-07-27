@@ -1,30 +1,21 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import {
-  checkAllTransfersAmountFilter,
-  uncheckAllTransfersAmountFilter,
-} from "../../../state/actions/filter.actions";
+import { ChangeEvent } from 'react';
 
-const TransferAmountCellAllTransfers: React.FC = () => {
-  const dispatch = useDispatch();
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    if (e.target.checked) {
-      dispatch(checkAllTransfersAmountFilter());
-    } else {
-      dispatch(uncheckAllTransfersAmountFilter());
-    }
-  };
+interface TransferAmountCellAllTransfersProps {
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+}
+
+const TransferAmountCellAllTransfers = ({ onChange }: TransferAmountCellAllTransfersProps) => {
 
   return (
-    <div className="filters-transfers_amout-cell filters-transfers_amout-all">
+    <div className="filters-transfers_amount-cell filters-transfers_amount-all">
       <input
         type="checkbox"
-        id="filter-amout-all"
-        name="filter-amout-all"
-        onChange={handleChange}
+        id="filter-amount-all"
+        name="filter-amount-all"
+        onChange={onChange}
         defaultChecked
       />
-      <label htmlFor="filter-amout-all">Все</label>
+      <label htmlFor="filter-amount-all">Все</label>
     </div>
   );
 };

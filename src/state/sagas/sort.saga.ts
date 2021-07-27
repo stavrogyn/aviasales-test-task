@@ -4,9 +4,9 @@ import {
   FASTEST_SORT_WAS_CLICKED,
   OPTIMAL_SORT_WAS_CLICKED,
 } from "../constants/sort.constants";
-import { sortedTicketsSelector } from "../selectors";
+import { getSortedTickets } from "../selectors";
 import { rerenderTickets } from "../actions/search.actions";
-import { TicketsInterface } from "../state.type";
+import { Tickets } from "../state.types";
 
 export default function* sagaSortWatcher() {
   yield takeEvery(
@@ -20,8 +20,8 @@ export default function* sagaSortWatcher() {
 }
 
 function* sagaSortkWorker() {
-  const ticketsToDisplay: TicketsInterface = yield select(
-    sortedTicketsSelector
+  const ticketsToDisplay: Tickets = yield select(
+    getSortedTickets
   );
   yield put(rerenderTickets(ticketsToDisplay));
 }
