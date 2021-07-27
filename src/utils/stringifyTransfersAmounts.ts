@@ -3,7 +3,7 @@ import { TransferNumber } from "../state/state.types";
 /**
  * @description Expect that "6 transfers" is the maximum possible value
  */
-const stringifyTransfersAmounts = <T extends TransferNumber>(
+export const stringifyTransfersAmounts = <T extends TransferNumber>(
   transferNumber: T
 ) => {
   const transfersAmountsToStringDict = {
@@ -18,4 +18,3 @@ const stringifyTransfersAmounts = <T extends TransferNumber>(
   return transfersAmountsToStringDict[transferNumber];
 };
 
-export default stringifyTransfersAmounts;

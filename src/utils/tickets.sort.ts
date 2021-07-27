@@ -1,7 +1,7 @@
 import { CHEAPEST, FASTEST, OPTIMAL } from "../state/constants/sort.constants";
 import { Tickets, SortType } from "../state/state.types";
 
-export default function sortTickets(tickets: Tickets, sort: SortType) {
+export const sortTickets = (tickets: Tickets, sort: SortType) => {
   switch (sort) {
     case CHEAPEST:
       return tickets.sort((a, b) => a.price - b.price);

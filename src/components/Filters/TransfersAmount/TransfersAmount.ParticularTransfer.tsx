@@ -1,6 +1,6 @@
 import { ChangeEvent } from "react";
 
-import stringifyTransfersAmounts from "../../../utils/stringifyTransfersAmounts";
+import { stringifyTransfersAmounts } from "../../../utils/stringifyTransfersAmounts";
 import { TransferNumber } from "../../../state/state.types";
 
 interface TransferAmountCellOneTransfersProps {

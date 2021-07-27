@@ -1,6 +1,6 @@
 import { createSelector } from "reselect";
-import filterTickets from "../utils/tickets.filter";
-import sortTickets from "../utils/tickets.sort";
+import { filterTickets } from "../utils/tickets.filter";
+import { sortTickets } from "../utils/tickets.sort";
 import AppState from "./state.types";
 
 export const getAllTickets = (state: AppState) => state.search.allTickets;
