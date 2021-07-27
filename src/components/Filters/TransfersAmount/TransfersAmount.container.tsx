@@ -12,7 +12,7 @@ import TransferAmountCellAllTransfers from "./TransfersAmount.AllTransfers";
 import { TransferNumber } from "../../../state/state.types";
 import { getTransfersAmount } from '../../../state/selectors'
 
-const TransfersAmount = () => {
+export const TransfersAmount = () => {
   const dispatch = useDispatch();
   const transfersAmountState = useSelector(getTransfersAmount);
 
@@ -60,5 +60,3 @@ const TransfersAmount = () => {
     </div>
   );
 };
-
-export default TransfersAmount;

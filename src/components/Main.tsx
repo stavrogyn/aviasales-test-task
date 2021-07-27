@@ -1,9 +1,8 @@
-import React from "react";
-import Filters from "./Filters/Filters.container";
-import Sorts from "./Sorts";
-import Results from "./Results";
+import { Filters } from "./Filters/Filters.container";
+import { Sorts } from "./Sorts";
+import { Results } from "./Results";
 
-const Main: React.FC = () => {
+export const Main = () => {
   return (
     <div className="content">
       <Filters />
@@ -15,4 +14,3 @@ const Main: React.FC = () => {
   );
 };
 
-export default Main;

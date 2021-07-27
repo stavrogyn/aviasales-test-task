@@ -1,9 +1,8 @@
-import React from "react";
-import CarrierLogo from "./Ticket.CarrierLogo";
-import TicketSegment from "./Ticket.Segment";
+import { CarrierLogo } from "./Ticket.CarrierLogo";
+import { TicketSegment } from "./Ticket.Segment";
 import { TicketInterface } from "../../state/state.types";
 
-const Ticket: React.FC<TicketInterface> = ({ price, carrier, segments }) => {
+export const Ticket = ({ price, carrier, segments }: TicketInterface) => {
   const ticketSegments = segments.map((segment, i) => (
     <TicketSegment {...segment} key={i} />
   ));
@@ -24,4 +23,3 @@ const Ticket: React.FC<TicketInterface> = ({ price, carrier, segments }) => {
   );
 };
 
-export default Ticket;

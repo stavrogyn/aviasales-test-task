@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   sortByCheapest,
@@ -9,7 +8,7 @@ import { CHEAPEST, FASTEST, OPTIMAL } from "../state/constants/sort.constants";
 import { SortType } from "../state/state.types";
 import { getSort } from "../state/selectors";
 
-const Sorts: React.FC = () => {
+export const Sorts = () => {
   const dispatch = useDispatch();
   const sortState = useSelector(getSort);
   const memoizedSort = (sortType: SortType) => {
@@ -63,4 +62,3 @@ const Sorts: React.FC = () => {
   );
 };
 
-export default Sorts;

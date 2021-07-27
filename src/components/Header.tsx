@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "../images/logo.svg";
 import { useDispatch } from "react-redux";
 import {
@@ -6,7 +5,7 @@ import {
   refreshSearchState,
 } from "../state/actions/search.actions";
 
-const Header: React.FC = () => {
+export const Header = () => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -26,4 +25,3 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;

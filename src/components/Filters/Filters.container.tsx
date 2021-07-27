@@ -1,12 +1,9 @@
-import React from "react";
-import TransfersAmount from "./TransfersAmount/TransfersAmount.container";
+import { TransfersAmount } from "./TransfersAmount/TransfersAmount.container";
 
-const Filters: React.FC = () => {
+export const Filters = () => {
   return (
     <div className="filters">
       <TransfersAmount />
     </div>
   );
 };
-
-export default Filters;

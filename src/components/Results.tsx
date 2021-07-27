@@ -1,7 +1,6 @@
-import React from "react";
 import useTickets from "../hooks/useTickets";
 
-const EmptyResultsStub: React.FC = () => {
+const EmptyResultsStub = () => {
   return (
     <div className="results-stub">
       <h2>Билетов — нет.</h2>
@@ -13,7 +12,7 @@ const EmptyResultsStub: React.FC = () => {
   );
 };
 
-const Results: React.FC = () => {
+export const Results = () => {
   const ticketsToDisplay = useTickets();
   return (
     <div className="results">
@@ -22,4 +21,3 @@ const Results: React.FC = () => {
   );
 };
 
-export default Results;
