@@ -1,4 +1,8 @@
-import useTickets from "../hooks/useTickets";
+import { useSelector } from "react-redux";
+
+import { Ticket } from "../components/Ticket/Ticket.container";
+import { TicketInterface } from "../state/state.types";
+import { getDisplayedTickets} from '../state/selectors';
 
 const EmptyResultsStub = () => {
   return (
@@ -13,7 +17,12 @@ const EmptyResultsStub = () => {
 };
 
 export const Results = () => {
-  const ticketsToDisplay = useTickets();
+  const ticketsData = useSelector(getDisplayedTickets);
+  const ticketsToDisplay = ticketsData.slice(0, 5)
+    .map((ticketData: TicketInterface, i) => (
+      <Ticket {...ticketData} key={i} />
+  ));
+
   return (
     <div className="results">
       {ticketsToDisplay.length === 0 ? <EmptyResultsStub /> : ticketsToDisplay}

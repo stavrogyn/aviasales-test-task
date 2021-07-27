@@ -1,4 +1,3 @@
-import React from "react";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Ticket } from "../components/Ticket/Ticket.container";
@@ -11,7 +10,7 @@ type mapTicketDataToFiveTicketComponentsType = (
   ticketsData: Tickets
 ) => JSX.Element[];
 
-const useTickets: () => JSX.Element[] = () => {
+const useTickets = () => {
   const mapTicketDataToFiveTicketComponents: mapTicketDataToFiveTicketComponentsType =
     (ticketsData) => {
       const firstFiveTickets = ticketsData

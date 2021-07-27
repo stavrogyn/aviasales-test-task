@@ -9,7 +9,8 @@ export const fetchSearchId: () => Promise<Record<string, string>> = async () => 
 }
 
 export const fetchTickets: (searchId: string) => Promise<Record<string, string>> = async (searchId: string) => {
-  return fetch(`${resultsUrl}?${new URLSearchParams({searchId})}`)
+  const params = new URLSearchParams({ searchId });
+  return fetch(`${resultsUrl}?${params}`)
     .then(response => response.json())
     .catch(() => fetchTickets(searchId))
 }
