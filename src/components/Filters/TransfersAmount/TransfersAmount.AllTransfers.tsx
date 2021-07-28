@@ -4,7 +4,7 @@ interface TransferAmountCellAllTransfersProps {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-const TransferAmountCellAllTransfers = ({ onChange }: TransferAmountCellAllTransfersProps) => {
+export const TransferAmountCellAllTransfers = ({ onChange }: TransferAmountCellAllTransfersProps) => {
 
   return (
     <div className="filters-transfers_amount-cell filters-transfers_amount-all">
@@ -20,4 +20,3 @@ const TransferAmountCellAllTransfers = ({ onChange }: TransferAmountCellAllTrans
   );
 };
 
-export default TransferAmountCellAllTransfers;

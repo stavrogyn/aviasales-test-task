@@ -10,14 +10,14 @@ import {
 import initialState from "../initialState";
 import { Tickets } from "../state.types";
 
-type SearchActionType = {
+type SearchAction = {
   type: string;
   tickets: Tickets;
 };
 
 export default function searchReducer(
   state = initialState.search,
-  action: SearchActionType
+  action: SearchAction
 ) {
   switch (action.type) {
     case INITIAL_REQUEST_DID_SEND:

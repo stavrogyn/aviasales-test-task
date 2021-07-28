@@ -6,11 +6,11 @@ import {
   uncheckTransfersAmountFilter,
   checkAllTransfersAmountFilter,
   uncheckAllTransfersAmountFilter
-} from "../../../state/actions/filter.actions";
-import { TransferAmountCellOneTransfer } from "./TransfersAmount.ParticularTransfer";
-import TransferAmountCellAllTransfers from "./TransfersAmount.AllTransfers";
-import { TransferNumber } from "../../../state/state.types";
-import { getTransfersAmount } from '../../../state/selectors'
+} from "../state/actions/filter.actions";
+import { TransferAmountCellOneTransfer } from "../components/Filters/TransfersAmount/TransfersAmount.ParticularTransfer";
+import { TransferAmountCellAllTransfers } from "../components/Filters/TransfersAmount/TransfersAmount.AllTransfers";
+import { TransferNumber } from "../state/state.types";
+import { getTransfersAmount } from '../state/selectors'
 
 export const TransfersAmount = () => {
   const dispatch = useDispatch();

@@ -1,4 +1,4 @@
-import { store } from "./components/App";
+import { store } from "./layouts/App.layout";
 import {
   sendInitialRequest,
   rerenderTickets,

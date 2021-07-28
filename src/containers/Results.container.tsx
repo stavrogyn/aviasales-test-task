@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-import { Ticket } from "../components/Ticket/Ticket.container";
+import { Ticket } from "./Ticket.container";
 import { TicketInterface } from "../state/state.types";
 import { getDisplayedTickets} from '../state/selectors';
 

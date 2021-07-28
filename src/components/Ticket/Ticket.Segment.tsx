@@ -1,6 +1,6 @@
 import { stringifyTransfersAmounts } from "../../utils/stringifyTransfersAmounts";
 import { Segment, TransferNumber } from "../../state/state.types";
-import { getTicketInfoToDisplay } from "./Ticket.utils";
+import { getTicketInfoToDisplay } from "../../utils/ticket.utils";
 
 export const TicketSegment = ({
   origin,

@@ -1,8 +1,8 @@
 import { Provider } from "react-redux";
 
 import configureStore from "../state/configureStore";
-import { Header } from "./Header";
-import { Main } from "./Main";
+import { Header } from "../containers/Header.container";
+import { Searchpage } from "./Searchpage.layout";
 
 export const store = configureStore();
 
@@ -12,7 +12,7 @@ export const App = () => {
       <div className="app-wrapper">
         <div className="app">
           <Header />
-          <Main />
+          <Searchpage />
         </div>
       </div>
     </Provider>

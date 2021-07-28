@@ -8,7 +8,7 @@ import {
 } from "../constants/filter.constants";
 import initialState from "../initialState";
 
-type FilterActionType = {
+type FilterAction = {
   type: string;
   transferNumber: number;
   newTransfers: number[];
@@ -16,7 +16,7 @@ type FilterActionType = {
 
 export default function filterReducer(
   state = initialState.filters,
-  action: FilterActionType
+  action: FilterAction
 ) {
   switch (action.type) {
     case FILTERS_TRANSFERS_AMOUNT_DID_CHECK:

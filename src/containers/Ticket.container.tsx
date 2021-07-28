@@ -1,6 +1,6 @@
-import { CarrierLogo } from "./Ticket.CarrierLogo";
-import { TicketSegment } from "./Ticket.Segment";
-import { TicketInterface } from "../../state/state.types";
+import { CarrierLogo } from "../components/Ticket/Ticket.CarrierLogo";
+import { TicketSegment } from "../components/Ticket/Ticket.Segment";
+import { TicketInterface } from "../state/state.types";
 
 export const Ticket = ({ price, carrier, segments }: TicketInterface) => {
   const ticketSegments = segments.map((segment, i) => (

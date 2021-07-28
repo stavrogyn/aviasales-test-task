@@ -1,4 +1,4 @@
-import { TransfersAmount } from "./TransfersAmount/TransfersAmount.container";
+import { TransfersAmount } from "../containers/TransfersAmount.container";
 
 export const Filters = () => {
   return (

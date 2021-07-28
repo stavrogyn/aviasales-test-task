@@ -9,13 +9,13 @@ import {
 } from "../constants/sort.constants";
 import initialState from "../initialState";
 
-type SortActionType = {
+type SortAction = {
   type: string;
 };
 
 export default function sortReducer(
   state = initialState.sort,
-  action: SortActionType
+  action: SortAction
 ) {
   switch (action.type) {
     case CHEAPEST_SORT_WAS_CLICKED:
