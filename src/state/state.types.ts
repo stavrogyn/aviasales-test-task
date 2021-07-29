@@ -24,9 +24,9 @@ export interface TransfersAmount {
   6?: boolean;
 }
 
-export type Tickets = TicketInterface[];
+export type Tickets = Ticket[];
 
-export interface TicketInterface {
+export interface Ticket {
   price: number;
   carrier: string;
   segments: Segment[];

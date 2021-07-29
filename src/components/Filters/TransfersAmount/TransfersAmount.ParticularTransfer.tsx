@@ -1,12 +1,12 @@
 import { ChangeEvent } from "react";
 
-import { stringifyTransfersAmounts } from "../../../utils/stringifyTransfersAmounts";
+import { stringifyTransfersAmounts } from "../../../utils/ticket.stringifyTransfersAmounts";
 import { TransferNumber } from "../../../state/state.types";
 
 interface TransferAmountCellOneTransfersProps {
   transferNumber: TransferNumber,
   checked: boolean,
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>, transferNumber: TransferNumber) => void;
 }
 
 export const TransferAmountCellOneTransfer =
@@ -24,7 +24,7 @@ export const TransferAmountCellOneTransfer =
           id={`filter-amount-${transferNameInCssClass}`}
           name={`filter-amount-${transferNameInCssClass}`}
           defaultChecked={checked}
-          onChange={onChange}
+          onChange={(event) => onChange(event, transferNumber)}
         />
         <label htmlFor={`filter-amount-${transferNameInCssClass}`}>
           {transferNameInHtmlLabel}

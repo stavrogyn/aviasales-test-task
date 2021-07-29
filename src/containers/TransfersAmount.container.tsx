@@ -1,4 +1,4 @@
-import { ChangeEvent} from 'react'; 
+import { ChangeEvent, useCallback} from 'react'; 
 import { useSelector, useDispatch } from "react-redux";
 
 import {
@@ -16,15 +16,13 @@ export const TransfersAmount = () => {
   const dispatch = useDispatch();
   const transfersAmountState = useSelector(getTransfersAmount);
 
-  const handleChangeOneTransfersCell = (transferNumber: TransferNumber) => {
-    return (event: ChangeEvent<HTMLInputElement>) => {
-      if (event.target.checked) {
-        dispatch(checkTransfersAmountFilter(transferNumber));
-      } else {
-        dispatch(uncheckTransfersAmountFilter(transferNumber));
-      }
+  const handleChangeOneTransfersCell = useCallback((event: ChangeEvent<HTMLInputElement>, transferNumber: TransferNumber) => {
+    if (event.target.checked) {
+      dispatch(checkTransfersAmountFilter(transferNumber));
+    } else {
+      dispatch(uncheckTransfersAmountFilter(transferNumber));
     }
-  };
+  }, [dispatch])
 
   const transfersCells = Object.entries(transfersAmountState).map(
     (transfer, i) => {
@@ -34,20 +32,20 @@ export const TransfersAmount = () => {
         <TransferAmountCellOneTransfer
           transferNumber={transferNumber}
           checked={transferState}
-          onChange={handleChangeOneTransfersCell(transferNumber)}
+          onChange={handleChangeOneTransfersCell}
           key={i}
         />
       );
     }
   );
 
-  const handleChangeAllTransfersCells = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChangeAllTransfersCells = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
       dispatch(checkAllTransfersAmountFilter());
     } else {
       dispatch(uncheckAllTransfersAmountFilter());
     }
-  };
+  }, [dispatch])
 
 
   return (

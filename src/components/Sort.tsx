@@ -1,11 +1,11 @@
 type SortType = {
   sortName: string, 
   sortText: string, 
-  onClick: () => void, 
+  onClick?: () => void, 
   defaultChecked: boolean
 }
 
-export const Sort = ({ sortName, sortText, onClick, defaultChecked}: SortType) => {
+export const SortItem = ({ sortName, sortText, onClick, defaultChecked}: SortType) => {
   return (
     <div className={`sort sort-${sortName}`}>
       <input

@@ -1,7 +1,7 @@
 import { ChangeEvent } from 'react';
 
 interface TransferAmountCellAllTransfersProps {
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const TransferAmountCellAllTransfers = ({ onChange }: TransferAmountCellAllTransfersProps) => {
