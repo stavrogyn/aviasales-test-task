@@ -1,7 +1,5 @@
-import { Tickets } from "../state/state.types";
-import { TransfersAmount } from "../state/state.types";
+import { Tickets, TransfersAmount, TransferNumber } from "../state/state.types";
 
-type TransferNumberType = 1 | 2 | 3 | 4 | 5 | 6;
 
 export const filterTickets = (
   tickets: Tickets,
@@ -9,7 +7,7 @@ export const filterTickets = (
 ) => {
   return tickets.filter((t) =>
     t.segments.some(
-      (s) => transfersAmountState[s.stops.length as TransferNumberType] === true
+      (segment) => transfersAmountState[segment.stops.length as TransferNumber] === true
     )
   );
 }

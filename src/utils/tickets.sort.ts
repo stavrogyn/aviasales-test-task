@@ -8,11 +8,11 @@ export const sortTickets = (tickets: Tickets, sort: SortType) => {
     case FASTEST:
       return tickets.sort((a, b) => {
         const aSumDuration = a.segments.reduce(
-          (acc, s) => +s.duration + acc,
+          (acc, segment) => +segment.duration + acc,
           0
         );
         const bSumDuration = b.segments.reduce(
-          (acc, s) => +s.duration + acc,
+          (acc, segment) => +segment.duration + acc,
           0
         );
         return aSumDuration - bSumDuration;
